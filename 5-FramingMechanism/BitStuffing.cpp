@@ -4,9 +4,9 @@ using namespace std;
 string stuffing(const string& a) {
     string b;
     int cnt = 0;
-    for (char bit : a) {
-        b.push_back(bit);
-        if (bit == '1') {
+    for(char c : a) {
+        b.push_back(c);
+        if (c == '1') {
             cnt++;
             if (cnt == 5) {
                 b.push_back('0');
