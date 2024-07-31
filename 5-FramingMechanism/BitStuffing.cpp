@@ -39,19 +39,13 @@ int main() {
     string original;
     cout << "Enter the original data: ";
     cin >> original;
-    string flag = "01111110";
-
-    string stuffedData = flag + stuffing(original) + flag;
-    cout << "Data after stuffing: " << stuffedData << endl;
-
-    string dataWithoutFlag = stuffedData.substr(flag.length(), stuffedData.length() - 2 * flag.length());
-    string destuffedData = destuffing(dataWithoutFlag);
-
-    cout << "Data after destuffing: " << destuffedData << endl;
-    if (destuffedData == original) {
-        cout << "Success: Destuffed data matches the original data!" << endl;
-    } else {
-        cout << "Error: Destuffed data does not match the original data!" << endl;
-    }
+    string stuffed =stuffing(original);
+    cout << "Data after stuffing: " << stuffed << endl;
+    string destuffed = destuffing(stuffed);
+    cout << "Data after destuffing: " << destuffed << endl;
+    if (destuffed == original)
+        cout << "Success: Destuffed data matches the original data" << endl;
+    else
+        cout << "Error: Destuffed data does not match the original data" << endl;
     return 0;
 }
