@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-string stuffing(const string& a) {
+string stuffing(string& a) {
     string b;
     int cnt = 0;
     for(char c : a) {
@@ -17,7 +17,7 @@ string stuffing(const string& a) {
     }
     return b;
 }
-string destuffing(const string& a) {
+string destuffing(string& a) {
     string b;
     int cnt = 0;
     for (size_t i = 0; i < a.size(); i++) {

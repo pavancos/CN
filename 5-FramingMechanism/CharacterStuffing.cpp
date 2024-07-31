@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-string stuffing(const string &data, char flag, char esc){
+string stuffing(string &data, char flag, char esc){
     string stuffed;
     stuffed += flag;
     for (char c : data)
@@ -13,7 +13,7 @@ string stuffing(const string &data, char flag, char esc){
     stuffed += flag;
     return stuffed; 
 }
-string destuffing(const string &data, char flag, char esc){
+string destuffing(string &data, char flag, char esc){
     string destuffed;
     bool escNext = false;
     for (int i = 1; i < data.length() - 1; ++i){
