@@ -1,0 +1,32 @@
+1. 
+    Enter data to be transmitted: 10111101101000
+    Enter the divisor: 1001
+
+    CRC value is: 101
+
+    Generated value is: 1011110110100101
+    Enter the received data: 1011110110100101
+
+    Error detected
+
+2.
+    Enter data to be transmitted: 10010011100111
+    Enter the divisor: 10110
+
+    CRC value is: 1100
+
+    Generated value is: 10010011100111100
+    Enter the received data: 100100111001111100
+
+    No error detected
+
+3. 
+    Enter data to be transmitted: 101010111
+    Enter the divisor: 101
+
+    CRC value is: 11
+
+    Generated value is: 1010101111
+    Enter the received data: 10101011111
+
+    No error detected

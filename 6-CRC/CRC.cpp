@@ -1,14 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-void doXOR(char *tmp, char *div, int divLen){
+void doXOR(char *tmp, char *div, int divLen)
+{
     for (int i = 1; i < divLen; i++)
         tmp[i] = (tmp[i] == div[i]) ? '0' : '1';
 }
-void calcCRC(char *data, char *tmp, char *div, int dataLen, int divLen){
+void calcCRC(char *data, char *tmp, char *div, int dataLen, int divLen)
+{
     for (int i = 0; i < divLen; i++)
         tmp[i] = data[i];
     int i = divLen;
-    do{
+    do
+    {
         if (tmp[0] == '1')
             doXOR(tmp, div, divLen);
         for (int j = 0; j < divLen - 1; j++)
@@ -16,14 +19,17 @@ void calcCRC(char *data, char *tmp, char *div, int dataLen, int divLen){
         tmp[divLen - 1] = data[i++];
     } while (i <= dataLen + divLen - 1);
 }
-void check(char *data, char *div, int dataLen, int divLen){
+void check(char *data, char *div, int dataLen, int divLen)
+{
     char tmp[50];
     cout << "Enter the received data: ";
     cin >> tmp;
     calcCRC(tmp, tmp, div, dataLen, divLen);
     bool errorDetected = false;
-    for (int i = 0; i < divLen - 1; i++){
-        if (tmp[i] != '0'){
+    for (int i = 0; i < divLen - 1; i++)
+    {
+        if (tmp[i] != '0')
+        {
             errorDetected = true;
             break;
         }
@@ -33,8 +39,9 @@ void check(char *data, char *div, int dataLen, int divLen){
     else
         cout << "\nNo error detected\n\n";
 }
-int main(){
-    char data[50],div[50],tmp[50];
+int main()
+{
+    char data[50], div[50], tmp[50];
     cout << "Enter data to be transmitted: ";
     cin >> data;
     cout << "Enter the divisor: ";
@@ -50,14 +57,14 @@ int main(){
     cout << "\nCRC value is: ";
     for (int i = 0; i < divLen - 1; i++)
         cout << tmp[i];
-    cout<<"\n";
+    cout << "\n";
 
     cout << "\nGenerated value is: ";
-    for(int i=0;i<dataLen-1;i++)
-        cout<< data[i];
+    for (int i = 0; i < dataLen - 1; i++)
+        cout << data[i];
     for (int i = 0; i < divLen - 1; i++)
         cout << tmp[i];
-        cout<<"\n";
+    cout << "\n";
 
     for (int i = dataLen, j = 0; i < dataLen + divLen - 1; i++, j++)
         data[i] = tmp[j];
@@ -87,4 +94,14 @@ Enter the received data: 10101011111
 
 No error detected
 */
+/*
+Enter data to be transmitted: 10111101101000
+Enter the divisor: 1001
 
+CRC value is: 101
+
+Generated value is: 1011110110100101
+Enter the received data: 1011110110100101
+
+Error detected
+*/
