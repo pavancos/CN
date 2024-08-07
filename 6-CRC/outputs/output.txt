@@ -4,7 +4,7 @@
 
     CRC value is: 101
 
-    Generated value is: 1011110110100101
+    Generated value is: 1011110110100101 //10111101101000101
     Enter the received data: 1011110110100101
 
     Error detected
