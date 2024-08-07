@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
-string xorOf(string encoded, string crc) 
-{
+string xorOf(string encoded, string crc){
     int crclen = crc.length();
-    for (int i = 0; i <= (encoded.length() - crclen);){
-        for (int j = 0; j < crclen; j++)
-            encoded[i + j] = encoded[i + j] == crc[j] ? '0' : '1';
-            
-        for (; i < encoded.length() && encoded[i] != '1'; i++);
+    for (int i = 0; i <= (encoded.length() - crclen);i++){
+        if(encoded[i]=='1')
+            for (int j = 0; j < crclen; j++)
+                encoded[i + j] = encoded[i + j] == crc[j] ? '0' : '1';
     }
     return encoded;
 }
