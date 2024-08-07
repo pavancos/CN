@@ -3,9 +3,10 @@ using namespace std;
 string xorOf(string encoded, string crc){
     int crclen = crc.length();
     for (int i = 0; i <= (encoded.length() - crclen);i++){
-        if(encoded[i]=='1')
+        if(encoded[i]=='1'){
             for (int j = 0; j < crclen; j++)
                 encoded[i + j] = encoded[i + j] == crc[j] ? '0' : '1';
+        }
     }
     return encoded;
 }
@@ -23,7 +24,7 @@ int main(){
     for (int i = 1; i <= (crclen - 1); i++)
         encoded += '0';
     encoded = xorOf(encoded, crc);
-    cout << "Checksum generated is: ";
+    cout << "CRC is: ";
     cout << encoded.substr(encoded.length() - crclen + 1) << endl
          << endl;
     cout << "Message to be Transmitted over network: ";
@@ -40,6 +41,6 @@ int main(){
             cout << "Error in communication " << endl;
             return 0;
         }
-    cout << "No Error !" << endl;
+    cout << "No Error" << endl;
     return 0;
 }
