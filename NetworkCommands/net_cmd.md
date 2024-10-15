@@ -1,6 +1,5 @@
 Here’s the Markdown formatting for each command from the PDF:
 
-```markdown
 # Basic Linux Network Commands
 
 ## 1. `hostname`
@@ -14,8 +13,6 @@ Here’s the Markdown formatting for each command from the PDF:
   sudo hostname <newName>
   ```
   - This change is temporary; to make it permanent, edit `/etc/hostname`.
-
----
 
 ## 2. `ifconfig`
 - **What it does**: Configures and displays network interfaces.
